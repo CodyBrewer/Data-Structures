@@ -17,12 +17,21 @@ class Queue:
     def __init__(self):
         self.size = 0
         # self.storage = ?
+        self.storage = []
     
     def __len__(self):
-        pass
+        return len(self.storage)
 
     def enqueue(self, value):
-        pass
+        self.size += 1
+        self.storage.insert(0, value)
 
     def dequeue(self):
-        pass
+        self.size -1
+        # check if empty
+        if len(self.storage) == 0:
+            return None
+        # remove the first element in storage
+        node = self.storage.pop()
+        return node
+ 
