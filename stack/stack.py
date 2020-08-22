@@ -14,12 +14,24 @@ class Stack:
     def __init__(self):
         self.size = 0
         # self.storage = ?
+        self.storage = []
 
     def __len__(self):
-        pass
+        return self.size
 
     def push(self, value):
-        pass
+        # add an element to the front of our array
+        self.size += 1
+        self.storage.insert(0, value)
 
     def pop(self):
-        pass
+        # check if empty
+        if len(self.storage) == 0:
+            return None
+        # remove the first element in storage
+        self.size -= 1
+        node = self.storage.pop(0)
+        return node
+
+new_stack = Stack()
+print(len(new_stack))
