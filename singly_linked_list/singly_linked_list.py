@@ -8,6 +8,14 @@ class LinkedList:
         self.head:Node = None # Stores a node, that corresponds to our first node in the lsit
         self.tail:Node = None# Stores a node, that corresponds to our last node in the lsit
 
+    def __str__(self):
+        output = ''
+        current_node = self.head # create a tracker node variable
+        while current_node is not None: # loop untils its NONE
+            output += f'{current_node.value} -> '
+            current_node = current_node.next_node # update the tracker node to the next node
+        return output
+
     def add_to_head(self, value):
         # Create a node to add
         new_node = Node(value)
