@@ -75,4 +75,4 @@ class LinkedList:
             if current_node.value == value:
                 return True
             current_node = current_node.next_node
-        return False    
+        return False
