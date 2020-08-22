@@ -32,7 +32,7 @@ class Stack:
 
     def pop(self):
         # check if empty
-        if len(self.storage) == 0:
+        if self.size == 0:
             return None
         # remove the first element in storage
         self.size -= 1
