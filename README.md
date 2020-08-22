@@ -5,7 +5,7 @@ Topics:
  * Queues and Stacks
  * Doubly Linked Lists
  * Binary Search Trees
- * Related Code Challenge Problems
+ * Related Code Challenge Probl ems
 
 Stretch Goals:
  * LRU Cache
