@@ -7,7 +7,18 @@ class ListNode:
         self.prev = prev
         self.value = value
         self.next = next
-            
+
+    def delete(self):
+        # check if there is a previous and next node for the node
+        # there is a previous node
+        if self.prev:
+            # set the previous node of the node we are deleting (self) next node to the next node in the list
+            self.prev.next = self.next
+        # there is a next node
+        if self.next:
+            # set the next node's previous node the the previous node of the node we are deleting(self)
+            self.next.prev = self.prev
+        # our self next and prev property are no longer pointing to any node so I am garbage collected by the pygc        
 """
 Our doubly-linked list class. It holds references to 
 the list's head and tail nodes.
@@ -91,7 +102,6 @@ class DoublyLinkedList:
     """
     def delete(self, node):
         pass
-
     """
     Finds and returns the maximum value of all the nodes 
     in the List.
