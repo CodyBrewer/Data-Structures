@@ -144,7 +144,18 @@ class DoublyLinkedList:
     List and inserts it as the new tail node of the List.
     """
     def move_to_end(self, node):
-        pass
+        # check if the node is alread at the end (it's the tail node)
+        if node is self.tail:
+            # nothing to do
+            return None
+        # otherwise the node is not at the end
+        # create new node to place at the tail
+        new_tail = ListNode(node.value)
+        # delete the passed in node
+        self.delete(node)
+        # add the new_tail node to the tail
+        self.add_to_tail(new_tail)
+
     """
     Deletes the input node from the List, preserving the 
     order of the other elements of the List.
