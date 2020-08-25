@@ -2,12 +2,14 @@ class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
         self.next_node = next_node
+        
 
 class LinkedList:
     def __init__(self):
-        self.head:Node = None # Stores a node, that corresponds to our first node in the lsit
-        self.tail:Node = None# Stores a node, that corresponds to our last node in the lsit
-
+        self.head:Node = None # Stores a node, that corresponds to our first node in the list
+        self.tail:Node = None# Stores a node, that corresponds to our last node in the list
+        
+        self.size = 0
     def __str__(self):
         output = ''
         current_node = self.head # create a tracker node variable
@@ -15,6 +17,9 @@ class LinkedList:
             output += f'{current_node.value} -> '
             current_node = current_node.next_node # update the tracker node to the next node
         return output
+
+    def __len__(self):
+        return self.size
 
     def add_to_head(self, value):
         # Create a node to add
