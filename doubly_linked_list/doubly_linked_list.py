@@ -71,11 +71,11 @@ class DoublyLinkedList:
             return None
         # there is a head
         # store the head value so we can return it after we delete it
-        head_value = self.head
+        head_value = self.head.value
         # delete the head node
         self.delete(self.head)
         # return the head_value
-        return head_value
+        return head_value.value
             
     """
     Wraps the given value in a ListNode and inserts it 
@@ -116,10 +116,10 @@ class DoublyLinkedList:
             return None
         # there is a tail value
         # store the tail value to return later
-        tail_value = self.tail
+        tail_value = self.tail.value
         # delete the tail node
         self.delete(self.tail)
-        # return the delete value
+        # return the deleted value
         return tail_value
             
     """
@@ -130,14 +130,16 @@ class DoublyLinkedList:
         # check if node is already at the front (it's the head node)
         if node is self.head:
             # nothing to do
-            return None
+            return node.value
         # otherwise the node is not at the front 
         # create new head node using the node value
-        new_head = ListNode(node.value)
+        new_head_value = node.value
         # delete the passed in node
         self.delete(node)
         # set the new_head using the list.add_to_head method
-        self.add_to_head(new_head)
+        self.add_to_head(new_head_value)
+    
+        return self.head.value
 
     """
     Removes the input node from its current spot in the 
@@ -147,14 +149,16 @@ class DoublyLinkedList:
         # check if the node is alread at the end (it's the tail node)
         if node is self.tail:
             # nothing to do
-            return None
+            return node.value
         # otherwise the node is not at the end
         # create new node to place at the tail
-        new_tail = ListNode(node.value)
+        new_tail_value = node.value
         # delete the passed in node
         self.delete(node)
         # add the new_tail node to the tail
-        self.add_to_tail(new_tail)
+        self.add_to_tail(new_tail_value)
+        
+        return self.tail.value
 
     """
     Deletes the input node from the List, preserving the 
