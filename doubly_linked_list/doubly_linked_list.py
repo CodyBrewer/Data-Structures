@@ -118,7 +118,7 @@ class DoublyLinkedList:
         # store the tail value to return later
         tail_value = self.tail
         # delete the tail node
-        self.delete(self.head)
+        self.delete(self.tail)
         # return the delete value
         return tail_value
             
